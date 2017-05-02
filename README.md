@@ -1,5 +1,7 @@
 [Japanese version](#japanese)
 
+# English
+
 ## What can you do with DR?
 
 DR license is the license that licensers enable to grant license for others to make doujin/derivative works(__never allow dead copy__) without special knowledges of law.
@@ -31,14 +33,260 @@ In conclusion, just to publish creative works for free is not good way to surviv
 
 ## Immediate Goals
 
-* Mashine-readable license. It helpes developer to implement automatic loyalty payment system.
 * Human-readable license. I'm going to make deeds like [Creative Commons do](https://creativecommons.org/licenses/by/3.0/).
-* Designated location and period. Licenser can designated where and when licensee can make derivative works.
+* Mashine-readable license. The license is written as XML and JSON. It helpes developer to implement automatic loyalty payment system.
+* Designated location and term. Licenser can designated where and when licensee can make derivative works.
 
-## Specification
+## Types of licenses and their specifications
 
-### 
+### Term
 
+Licensers can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__.
+
+#### Example
+
+Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <term>
+    <from>1999-12-31 23:59:59</from>
+    <to>2000-01-30 23:59:59</to>
+  </term>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "term": {
+      "from": "1999-12-31 23:59:59", 
+      "to": "2000-01-30 23:59:59"
+    }
+  }
+}
+</pre>
+
+### Location
+
+Licensers can designated the location of validity. The location is written as URL. If the location is not designated, __it's regarded as any URL__. 
+
+- If type parameter's value is "map", it means location of validity is the spot which the map URL designated. 
+  - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" means "designate the Tokyo Big Sight(the spot name in real world)".
+- If type parameter's value is "web", it means any web resource refererd by that URL and the URLs including that URL.
+  - "http://jiyu.lol/blog/" means "designate the URL http://jiyu.lol/blog/\* (\* means any words or nothing)"
+
+#### Example
+
+Grant license at the any URL including "http://jiyu.lol/blog/".
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <location>
+    <type>web</type>
+    <url>http://jiyu.lol/blog</url>
+  </location>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": {
+      "type": "web",
+      "url": "http://jiyu.lol/blog"
+    }
+  }
+}
+</pre>
+
+Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416).
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <location>
+    <type>map</type>
+    <url>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</url>
+  </location>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": {
+      "map": "true",
+      "url": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+    }
+  }
+}
+</pre>
+
+### Non-commercial
+
+DR is mainly for commercial use, but sometime the licenser wants to grant non-commercial use. If licensers don't set this parameter, __it's regarded as allowing commercial use__.
+
+#### Example
+
+Grant license as long as it's non-commercial use.
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <commercial>false</commercial>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": "http://jiyu.lol/blog",
+    "commercial": false
+  }
+}
+</pre>
+
+### Fee
+
+Licensers set fee of using works. They can set percentage of gross revenue or fixed price. If licensers don't set this parameter, __it's regarded as free__.
+
+#### Example
+
+Grant license for 1000JPY(Japanese Yen).
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <fee>
+    <currency>JPY</currency>
+    <price>1000</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "fee": {
+      "currency": "JPY",
+      "price": 1000
+    }
+  }
+}
+</pre>
+
+Grant license for 10% of gross revenue.
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <fee>
+    <price>10%</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "fee": {
+      "price": "10%"
+    }
+  }
+}
+</pre>
+
+Now, you've learnt all parameters of DR. Let's make your own license. [Under Maintenance](http://example.com/)
+
+For example:
+
+- URL of Original Work: http://zunko.jp/
+- Term: from 2017-08-11 10:00:00 to 2017-08-11 16:00:00
+- Location: URL including http://www.deviantart.com/
+- Commercial: OK 
+- Fee: 10% of gross revenue
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <term>
+    <from>2017-08-11 10:00:00</from>
+    <to>2017-08-11 16:00:00</to>
+  </term>
+  <location>
+    <place>internet</place>
+    <url>http://www.deviantart.com/</url>
+  </location>
+  <commercial>true</commercial>
+  <fee>
+    <price>10%</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "term": {
+      "from": "2017-08-11 10:00:00",
+      "to": "2017-08-11 16:00:00"
+    },
+    "location": {
+      "place": "internet",
+      "url": "http://www.deviantart.com/"
+    },
+    "commercial": true,
+    "fee": {
+      "price": "10%"
+    }
+  }
+}
+</pre>
 
 
 
@@ -46,7 +294,7 @@ In conclusion, just to publish creative works for free is not good way to surviv
 
 ## DRとは
 
-多くの創作作品はライセンスを付与されていません。これは、その二次利用を望む人がその都度利用申請をしなければいけないという意味で非効率的です。権利保有者を見つけるのはとても難しいかもしれません。もし見つかっても、クリエイターが交渉自体を嫌がる（クリエイターはそのような非生産的行為を嫌うものです）かもしれません。エージェントを雇えばこの問題は解決しますが、お金がなくて（多くのクリエイターは貧乏です）適切なエージェントを雇うお金がないかもしれません。
+多くの創作作品はライセンスを付与されていません。これは、その二次利用を望む人がその都度利用申請をしなければいけないという意味で非効率的です。権利者を見つけるのはとても難しいかもしれません。もし見つかっても、クリエイターが交渉自体を嫌がる（クリエイターはそのような非生産的行為を嫌うものです）かもしれません。エージェントを雇えばこの問題は解決しますが、お金がなくて（多くのクリエイターは貧乏です）適切なエージェントを雇うお金がないかもしれません。
 
 すでに[クリエイティブ・コモンズ](https://creativecommons.org/)や[同人マーク](https://commonsphere.jp/doujin-license-1/)というものがありますが、これらは商用にするには不便なことが多いです。
 
@@ -63,3 +311,261 @@ In conclusion, just to publish creative works for free is not good way to surviv
 
 1. どうやって作品を低コストで商品化するか
 2. どうやって二次創作者から適切なライセンス料を徴収するか
+
+## 当面の目標
+
+* 人間が読みやすいライセンス。将来的には[コモンズ証](https://creativecommons.org/licenses/by/2.1/jp/)のようなものを作りたい。
+* コンピュータで処理できるライセンス。ライセンスはXMLとJSONフォーマットで提供されます。これにより、開発者が自動でロイヤリティ支払いシステムを作ることが容易になります。
+* 場所と期間の指定。権利者はいつどこで二次創作ができるかを指定できます。
+
+## ライセンスの種類と仕様
+
+### 期間(Term)
+
+権利者は有効期間を指定できます。期間は"yyyy-mm-dd hh-mm-ss"というフォーマットで記述可能です。もし期限が指定されていなければ、__無期限とみなされます__。
+
+#### 例
+
+1999-12-31 23:59:59から2000-01-30 23:59:59までライセンスする。
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <term>
+    <from>1999-12-31 23:59:59</from>
+    <to>2000-01-30 23:59:59</to>
+  </term>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "term": {
+      "from": "1999-12-31 23:59:59", 
+      "to": "2000-01-30 23:59:59"
+    }
+  }
+}
+</pre>
+
+### 場所
+
+権利者は有効場所を指定できます。場所はURLの形式で示されます。もし場所が指定されていなければ、__全ての場所とみなされます__。
+
+- typeというパラメータが"map"という値を持っていたら、有効場所はそのマップのURLが示す現実の場所になります。
+  - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"は「東京ビックサイト（現実世界の場所）」を示します。
+- typeというパラメータが"web"という値を持っていたら、有効場所はそのURL及びそのURLを含む全てのURLが参照するWebリソースになります。
+  - "http://jiyu.lol/blog/"は「"http://jiyu.lol/blog/\*"を示します(\* は任意の単語、もしくは空文字)」
+
+#### 例
+
+「http://jiyu.lol/blog/」を含むURLでの利用を許諾する。
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <location>
+    <type>web</type>
+    <url>http://jiyu.lol/blog</url>
+  </location>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": {
+      "type": "web",
+      "url": "http://jiyu.lol/blog"
+    }
+  }
+}
+</pre>
+
+[東京ビックサイト](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416)での利用を許諾する.
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <location>
+    <type>map</type>
+    <url>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</url>
+  </location>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": {
+      "map": "true",
+      "url": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+    }
+  }
+}
+</pre>
+
+### 非商用
+
+DRは主に商用での利用を想定していますが、権利者は非営利での利用を許諾したいこともあるでしょう。このパラメータを省略した場合、__商用利用を許可しているとみなされます__。
+
+#### 例
+
+非営利での利用を許諾する。
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <commercial>false</commercial>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "location": "http://jiyu.lol/blog",
+    "commercial": false
+  }
+}
+</pre>
+
+### 費用
+
+権利者は許諾費用を設定できます。総売上の額に対するパーセンテージか、固定額を指定できます。このパラメータを省略した場合、__無償許諾とみなされます__。
+
+#### 例
+
+1000JPY（日本円）で利用許諾する。
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <fee>
+    <currency>JPY</currency>
+    <price>1000</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "fee": {
+      "currency": "JPY",
+      "price": 1000
+    }
+  }
+}
+</pre>
+
+総売上の10%で許諾する。
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <fee>
+    <price>10%</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "fee": {
+      "price": "10%"
+    }
+  }
+}
+</pre>
+
+これで全部です。早速ライセンスを作ってみましょう。[工事中](http://example.com/)
+
+例:
+
+- 原作のURL: http://zunko.jp/
+- 期間: 2017-08-11 10:00:00から2017-08-11 16:00:00まで
+- 場所: http://www.deviantart.com/ を含むURL
+- 商用: 可 
+- 費用: 総売上の10%
+
+##### XML
+
+<pre>
+<license type="dr">
+  <origin>http://zunko.jp/</origin>
+  <term>
+    <from>2017-08-11 10:00:00</from>
+    <to>2017-08-11 16:00:00</to>
+  </term>
+  <location>
+    <place>internet</place>
+    <url>http://www.deviantart.com/</url>
+  </location>
+  <commercial>true</commercial>
+  <fee>
+    <price>10%</price>
+  </fee>
+</license>
+</pre>
+
+##### JSON
+
+<pre>
+{
+  "license": {
+    "type": "dr",
+    "origin": "http://zunko.jp/",
+    "term": {
+      "from": "2017-08-11 10:00:00",
+      "to": "2017-08-11 16:00:00"
+    },
+    "location": {
+      "place": "internet",
+      "url": "http://www.deviantart.com/"
+    },
+    "commercial": true,
+    "fee": {
+      "price": "10%"
+    }
+  }
+}
+</pre>
+
