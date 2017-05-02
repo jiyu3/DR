@@ -16,7 +16,7 @@ But their are the problem. First, licenser have to have facility and organizatio
 
 In conclusion, just to publish creative works for free is not good way to survive, but there's no good other way to make works famous without huge advertising cost. Considering to these circumstances, I want to provide one of a best solution with DR(Doujin Required / Derivation Required) license:
 
-  1. How can we make our works more famous?
+  1. How can we commercialize works without much cost?
   2. How can we earn proper money from licensee?
 
 ## License
@@ -42,5 +42,5 @@ In conclusion, just to publish creative works for free is not good way to surviv
 結論としては、作品を無償で公開するのは良い方法ではありません。しかし、（大量の広告費をかけずに）作品を有名にする方法もまだ確立されていません。このような状況を鑑みて、DR(Doujin Required / Derivation Required, 二次創作必須)というライセンスを私は考案します。
 これによって解決したい問題は以下です:
 
-  1. どうやって作品を商品化するか
-  2. どうやって二次創作者から、適切なライセンス料を徴収するか
+  1. どうやって作品を低コストで商品化するか
+  2. どうやって二次創作者から適切なライセンス料を徴収するか
