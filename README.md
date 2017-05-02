@@ -39,7 +39,7 @@ DR(Doujin Required / Derivation Required) license:
 ## License
 
 
-## DRとは {#japanese}
+## DRとは {## {#japanese}}
 
 多くの創作作品はライセンスを付与されていません。これは、その二次利用を望む人がその都度利用申請をしなければいけないという
 意味で非効率的です。権利保有者を見つけるのはとても難しいかもしれません。もし見つかっても、クリエイターが交渉自体を
