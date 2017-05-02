@@ -1,5 +1,15 @@
 [Japanese version](#japanese)
 
+## What can you do with DR?
+
+DR license is the license that licensers enable to grant license for others to make doujin/derivative works(__never allow dead copy__) without special knowledges of law.
+
+Artists can:
+* Allow other people to make doujin / derivative works of your works without any legal cost
+
+Developers can:
+* Implement system for licensees to sell their works and pay loyalty automatically
+
 ## Intro
 
 A lot of creative works don't have a license. It's inefficient because licensee should request permission every time they want to use it. It may be difficult to find licensers, if they're found, they don't want to negotiate because artists don't prefer such a non-creative stuff, and they're too poor to hire good agent.
@@ -16,10 +26,19 @@ But their are the problem. First, licenser have to have facility and organizatio
 
 In conclusion, just to publish creative works for free is not good way to survive, but there's no good other way to make works famous without huge advertising cost. Considering to these circumstances, I want to provide one of a best solution with DR(Doujin Required / Derivation Required) license:
 
-  1. How can we commercialize works without much cost?
-  2. How can we earn proper money from licensee?
+1. How can we commercialize works without much cost?
+2. How can we earn proper money from licensee?
 
-## License
+## Immediate Goals
+
+* Mashine-readable license. It helpes developer to implement automatic loyalty payment system.
+* Human-readable license. I'm going to make deeds like [Creative Commons do](https://creativecommons.org/licenses/by/3.0/).
+* Designated location and period. Licenser can designated where and when licensee can make derivative works.
+
+## Specification
+
+### 
+
 
 
 
@@ -42,5 +61,5 @@ In conclusion, just to publish creative works for free is not good way to surviv
 結論としては、作品を無償で公開するのは良い方法ではありません。しかし、（大量の広告費をかけずに）作品を有名にする方法もまだ確立されていません。このような状況を鑑みて、DR(Doujin Required / Derivation Required, 二次創作必須)というライセンスを私は考案します。
 これによって解決したい問題は以下です:
 
-  1. どうやって作品を低コストで商品化するか
-  2. どうやって二次創作者から適切なライセンス料を徴収するか
+1. どうやって作品を低コストで商品化するか
+2. どうやって二次創作者から適切なライセンス料を徴収するか
