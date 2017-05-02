@@ -1,4 +1,4 @@
-[Japanese version](#japanese)
+[日本語版はこちら](#japanese)
 
 # English
 
