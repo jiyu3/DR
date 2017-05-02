@@ -1,4 +1,4 @@
-[Japanese version](#Japanese)
+[Japanese version](#japanese)
 
 ## Intro
 
