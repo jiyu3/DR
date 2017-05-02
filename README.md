@@ -1,4 +1,4 @@
-[Japanese version](#DRとは)
+[Japanese version](#Japanese)
 
 ## Intro
 
@@ -38,6 +38,8 @@ DR(Doujin Required / Derivation Required) license:
 
 ## License
 
+
+# Japanese
 
 ## DRとは
 
