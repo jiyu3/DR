@@ -49,7 +49,7 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <term>
@@ -57,11 +57,11 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
     <to>2000-01-30 23:59:59</to>
   </term>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -72,7 +72,7 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
     }
   }
 }
-</pre>
+```
 
 ### Location
 
@@ -89,7 +89,7 @@ Grant license at the any URL including "http://jiyu.lol/blog/".
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <location>
@@ -97,11 +97,11 @@ Grant license at the any URL including "http://jiyu.lol/blog/".
     <url>http://jiyu.lol/blog</url>
   </location>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -112,13 +112,13 @@ Grant license at the any URL including "http://jiyu.lol/blog/".
     }
   }
 }
-</pre>
+```
 
 Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416).
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <location>
@@ -126,11 +126,11 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
     <url>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</url>
   </location>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -141,7 +141,7 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
     }
   }
 }
-</pre>
+```
 
 ### Non-commercial
 
@@ -153,16 +153,16 @@ Grant license as long as it's non-commercial use.
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <commercial>false</commercial>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -171,7 +171,7 @@ Grant license as long as it's non-commercial use.
     "commercial": false
   }
 }
-</pre>
+```
 
 ### Fee
 
@@ -183,7 +183,7 @@ Grant license for 1000JPY(Japanese Yen).
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <fee>
@@ -191,11 +191,11 @@ Grant license for 1000JPY(Japanese Yen).
     <price>1000</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -206,24 +206,24 @@ Grant license for 1000JPY(Japanese Yen).
     }
   }
 }
-</pre>
+```
 
 Grant license for 10% of gross revenue.
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <fee>
     <price>10%</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -233,7 +233,7 @@ Grant license for 10% of gross revenue.
     }
   }
 }
-</pre>
+```
 
 Now, you've learnt all parameters of DR. Let's make your own license. [Under Maintenance](http://example.com/)
 
@@ -247,7 +247,7 @@ For example:
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <term>
@@ -263,11 +263,11 @@ For example:
     <price>10%</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -286,7 +286,7 @@ For example:
     }
   }
 }
-</pre>
+```
 
 
 
@@ -330,7 +330,7 @@ For example:
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <term>
@@ -338,11 +338,11 @@ For example:
     <to>2000-01-30 23:59:59</to>
   </term>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -353,7 +353,7 @@ For example:
     }
   }
 }
-</pre>
+```
 
 ### 場所
 
@@ -370,7 +370,7 @@ For example:
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <location>
@@ -378,11 +378,11 @@ For example:
     <url>http://jiyu.lol/blog</url>
   </location>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -393,13 +393,13 @@ For example:
     }
   }
 }
-</pre>
+```
 
 [東京ビックサイト](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416)での利用を許諾する.
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <location>
@@ -407,11 +407,11 @@ For example:
     <url>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</url>
   </location>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -422,7 +422,7 @@ For example:
     }
   }
 }
-</pre>
+```
 
 ### 非商用
 
@@ -434,16 +434,16 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <commercial>false</commercial>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -452,7 +452,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     "commercial": false
   }
 }
-</pre>
+```
 
 ### 費用
 
@@ -464,7 +464,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <fee>
@@ -472,11 +472,11 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     <price>1000</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -487,24 +487,24 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     }
   }
 }
-</pre>
+```
 
 総売上の10%で許諾する。
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <fee>
     <price>10%</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -514,7 +514,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     }
   }
 }
-</pre>
+```
 
 これで全部です。早速ライセンスを作ってみましょう。[工事中](http://example.com/)
 
@@ -528,7 +528,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 
 ##### XML
 
-<pre>
+```
 <license type="dr">
   <origin>http://zunko.jp/</origin>
   <term>
@@ -544,11 +544,11 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     <price>10%</price>
   </fee>
 </license>
-</pre>
+```
 
 ##### JSON
 
-<pre>
+```
 {
   "license": {
     "type": "dr",
@@ -567,5 +567,5 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     }
   }
 }
-</pre>
+```
 
