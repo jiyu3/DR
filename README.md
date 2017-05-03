@@ -31,7 +31,7 @@ In conclusion, just to publish creative works for free is not good way to surviv
 1. How can we commercialize works without much cost?
 2. How can we earn proper money from licensee?
 
-## Immediate Goals
+## Goals
 
 * Human-readable license. I'm going to make deeds like [Creative Commons do](https://creativecommons.org/licenses/by/3.0/).
 * Mashine-readable license. The license is written as XML and JSON. It helpes developer to implement automatic loyalty payment system.
