@@ -16,7 +16,7 @@ Developers can:
 
 A lot of creative works don't have a license. It's inefficient because licensee should request permission every time they want to use it. It may be difficult to find licensers, if they're found, they don't want to negotiate because artists don't prefer such a non-creative stuff, and they're too poor to hire good agent.
 
-We already have [Creative Commons](https://creativecommons.org/) and [Doujin Mark(Japanese)](https://commonsphere.jp/doujin-license-1/), but it's not well-custormised for business.
+We already have [Creative Commons](https://creativecommons.org/){:target="_blank"} and [Doujin Mark(Japanese)](https://commonsphere.jp/doujin-license-1/), but it's not well-custormised for business.
 
 Of course, we know how to earn money with [copyleft](https://en.wikipedia.org/wiki/Copyleft) license. Needless to say [Linux](https://en.wikipedia.org/wiki/Linux). In recent years, Github become bigger and bigger because of Git; Git's lincenses are GPL and [LGPL](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License). If you're programmer, you use codes and libraries licensed [MIT](https://en.wikipedia.org/wiki/MIT_License) like you breath.
 
