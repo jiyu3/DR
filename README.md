@@ -4,13 +4,18 @@
 
 ## What can you do with DR?
 
-DR license is the license that licensers enable to grant license for others to make doujin/derivative works(__never allow dead copy__) without special knowledges of law.
+DR license is the license that licensers enable to grant license for others to make doujin/derivative works without expertise of law. The biggest difference from [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) are:
+- __DO NOT ALLOW copy__ licenser's works. licensees should create new works.
+- __limited time and region__. Licensers can dedicate where and when licensees can make derivative/doujin works.
 
-Artists can:
-* Allow other people to make doujin / derivative works of your works without any legal cost
+DR is:
+- [Copyleft](https://en.wikipedia.org/wiki/Copyleft)
+- Free to use
+- Enhanse people to make derivative/doujin works
 
-Developers can:
-* Implement system for licensees to sell their works and pay loyalty automatically
+DR is NOT:
+- Profit Organization
+
 
 ## Intro
 
@@ -26,10 +31,13 @@ Of course there are not a few exceptions. Actually Japanese anime is almost free
 
 But their are the problem. First, licenser have to have facility and organization to make producsts and  managing license. Most artists and small companies can't afford to own/buy them. Secondary, Japanese anime industry is actually shrinking; totally losing is more than gaining; not sustainable. These are why other industries don't imitate this model.
 
+Of course, some organizations try to make solution. I surveyed most of them, only to understand they're out of style; they're [proprietary](https://en.wikipedia.org/wiki/Proprietary_software). Who is willing to submit to specified organization?
+
 In conclusion, just to publish creative works for free is not good way to survive, but there's no good other way to make works famous without huge advertising cost. Considering to these circumstances, I want to provide one of a best solution with DR(Doujin Required / Derivation Required) license:
 
-1. How can we commercialize works without much cost?
-2. How can we earn proper money from licensee?
+1. How can we enhanse people to make derivative/doujin works?
+2. How can we commercialize works without much cost?
+3. How can we earn proper money from licensee?
 
 ## Goals
 
