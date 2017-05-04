@@ -70,7 +70,7 @@
 - typeというパラメータが"map"という値を持っていたら、有効場所はそのマップのURLが示す現実の場所になります。
   - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" は「東京ビックサイト（現実世界の場所）」を示します。
 - typeというパラメータが"url"という値を持っていたら、有効場所はそのURL及びそのURLを含む全てのURLが参照するWebリソースになります。
-  - "http://jiyu.lol/blog/" は "http://jiyu.lol/blog/\*" を示します(\* は任意の単語、もしくは空文字)」
+  - "http://jiyu.lol/blog/" は "http://jiyu.lol/blog/*" を示します(\* は任意の単語、もしくは空文字)」
 
 #### 例
 
