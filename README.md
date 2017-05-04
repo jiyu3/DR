@@ -85,7 +85,7 @@ Licensers can designated the location of validity. The location is written as UR
 - If type parameter's value is "map", it means location of validity is the spot which the map URL designated. 
   - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" means "designate the Tokyo Big Sight(the spot name in real world)".
 - If type parameter's value is "url", it means any web resource refererd by that URL and the URLs including that URL.
-  - "http://jiyu.lol/blog/" means "designate the URL http://jiyu.lol/blog/* (* means any words or nothing)"
+  - "http://jiyu.lol/blog/" means "designate the URL http://jiyu.lol/blog/\* (\* means any words or nothing)"
 
 #### Example
 
