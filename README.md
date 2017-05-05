@@ -119,7 +119,7 @@ Grant license at the any URL including "http://jiyu.lol/blog/".
 </drequired>
 ```
 
-Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416).
+Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416) and URL including http://jiyu.lol/blog/ .
 
 ```html
 <drequired style="display:none;">
@@ -128,8 +128,14 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
     "version": 1.0.0,
     "website": "http://zunko.jp/",
     "region": {
-      "type": "url",
-      "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+      {
+        "type": "map",
+        "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+      },
+      {
+        "type": "url",
+        "where": "http://jiyu.lol/blog/"
+      }
     }
   }
 }

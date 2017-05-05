@@ -97,6 +97,8 @@ http通信で当該ページを読み込み、<drequired>タグの中身にア�
 - typeというパラメータが"url"という値を持っていたら、有効場所はそのURL及びそのURLを含む全てのURLが参照するWebリソースになります。
   - "http://jiyu.lol/blog/" は "http://jiyu.lol/blog/*" を示します(\* は任意の単語、もしくは空文字)」
 
+複数の場所を指定する場合は、単純に併記します。
+
 #### 例
 
 http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
@@ -116,7 +118,7 @@ http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
 </drequired>
 ```
 
-[東京ビックサイト](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416)での利用を許諾する。
+[東京ビックサイト](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416)及び http://jiyu.lol/blog/ での利用を許諾する。
 
 ```html
 <drequired style="display:none;">
@@ -125,8 +127,14 @@ http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
     "version": 1.0.0,
     "website": "http://zunko.jp/",
     "region": {
-      "type": "url",
-      "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+      {
+        "type": "map",
+        "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
+      },
+      {
+        "type": "url",
+        "where": "http://jiyu.lol/blog/"
+      }
     }
   }
 }
