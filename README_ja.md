@@ -2,7 +2,7 @@
 
 ## DRで何ができるのか
 
-DRとは、他の人々に対して二次創作の許諾を簡単にできるようにするライセンスです。使用に関して特別な法律知識は不要です。[クリエイティブ・コモンズ](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%E3%83%BB%E3%82%B3%E3%83%A2%E3%83%B3%E3%82%BA) との違いは以下です。
+DRとは、他の人々に対して二次創作の許諾を簡単にできるようにする[コピーレフト](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%94%E3%83%BC%E3%83%AC%E3%83%95%E3%83%88)なライセンスのフレームワークです。使用に関して特別な法律知識は不要です。[クリエイティブ・コモンズ](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%E3%83%BB%E3%82%B3%E3%83%A2%E3%83%B3%E3%82%BA) との違いは以下です。
 - __そのままの複製を許していません__。許諾を受けた人は新たなものを創作しなければなりません。
 - __期限及び場所を指定できます__。著作者は任意の期間及び場所を指定して権利許諾が可能です。
 
@@ -12,8 +12,9 @@ DRは以下です。
 - より多くの二次創作を生み出す
 
 DRは以下ではありません。
-- 営利組織
-
+- 営利組織によって運営されているもの
+- 無期限のライセンス
+- 場所を指定できないライセンス
 
 ## DRとは
 
@@ -41,10 +42,28 @@ DRは以下ではありません。
 ## 目標
 
 * 人間が読みやすいライセンス。将来的には[コモンズ証](https://creativecommons.org/licenses/by/2.1/jp/)のようなものを作りたい。
-* コンピュータで処理できるライセンス。ライセンスはXMLとJSONフォーマットで提供されます。これにより、開発者が自動でロイヤリティ支払いシステムを作ることが容易になります。
+* コンピュータで処理できるライセンス。ライセンスはJSONで提供されます。これにより、開発者が自動でロイヤリティ支払いシステムを作ることが容易になります。
 * 場所と期間の指定。権利者はいつどこで二次創作ができるかを指定できます。
 
 ## ライセンスの種類と仕様
+
+ライセンスはJSONで記述されます。html文書内に<drequired>というタグで当該JSON文字列を囲んで表記します。<drequired>タグには、どんな要素を付けても構いません。ブラウザで見た際に表示されないように、```style="display:none;"``` を指定することを推奨します。
+
+```html
+<drequired style="display:none;">
+{
+  "license": {
+    "version": 1.0,
+    /* 以下、ライセンスの情報を書く
+        :
+        :
+    */
+  }
+}
+</drequired>
+```
+
+http通信で当該ページを読み込み、<drequired>タグの中身にアクセスすれば、ライセンスの情報がJSONで取得できます。
 
 ### 期間(Term)
 
@@ -54,34 +73,22 @@ DRは以下ではありません。
 
 1999-12-31 23:59:59から2000-01-30 23:59:59までライセンスする。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <term>
-    <from>1999-12-31 23:59:59</from>
-    <to>2000-01-30 23:59:59</to>
-  </term>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "term": {
       "from": "1999-12-31 23:59:59", 
       "to": "2000-01-30 23:59:59"
     }
   }
 }
+</drequired>
 ```
 
-### 場所(Location)
+### 場所(Region)
 
 権利者は有効場所を指定できます。場所はURLの形式で示されます。もし場所が指定されていなければ、__全ての場所とみなされます__。
 
@@ -94,60 +101,36 @@ DRは以下ではありません。
 
 「http://jiyu.lol/blog/」を含むURLでの利用を許諾する。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <location>
-    <type>url</type>
-    <where>http://jiyu.lol/blog</where>
-  </location>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": {
       "type": "url",
       "where": "http://jiyu.lol/blog"
     }
   }
 }
+</drequired>
 ```
 
 [東京ビックサイト](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416)での利用を許諾する。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <location>
-    <type>map</type>
-    <where>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</where>
-  </location>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": {
       "type": "url",
       "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
     }
   }
 }
+</drequired>
 ```
 
 ### 非商用(Non-commercial)
@@ -158,56 +141,33 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 
 非営利での利用を許諾する。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <commercial>false</commercial>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": "http://jiyu.lol/blog",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": "http://jiyu.lol/blog",
     "commercial": false
   }
 }
+</drequired>
 ```
 
 ### 費用(Fee)
 
-権利者は許諾費用を設定できます。総売上の額に対するパーセンテージか、固定額を指定できます。このパラメータを省略した場合、__無償許諾とみなされます__。
+権利者は許諾費用を設定できます。総売上の額に対するパーセンテージか、固定額を指定できます。費用は二次創作物を他人に__有償で__販売するたびに発生します。許諾を受けた者が__無償で__二次創作作品を提供した際には__費用は生じません__。このパラメータを省略した場合、__無償許諾とみなされます__。
 
 #### 例
 
 1000JPY（日本円）で利用許諾する。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <fee>
-    <description>http://zunko.jp/con_shoushi.html</description>
-    <currency>JPY</currency>
-    <price>1000</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "currency": "JPY",
@@ -215,35 +175,25 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     }
   }
 }
+</drequired>
 ```
 
 総売上の10%で許諾する。
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <fee>
-    <description>http://zunko.jp/con_shoushi.html</description>
-    <price>10%</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
+    "version": 1.0.0,
     "type": "dr",
-    "origin": "http://zunko.jp/",
+    "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "price": "10%"
     }
   }
 }
+</drequired>
 ```
 
 これで全部です。早速ライセンスを作ってみましょう。[工事中](http://example.com/)
@@ -257,39 +207,17 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 - 費用: 総売上の10%
   - 支払い方の説明: http://zunko.jp/con_shoushi.html
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <term>
-    <from>2017-08-11 10:00:00</from>
-    <to>2017-08-11 16:00:00</to>
-  </term>
-  <location>
-    <type>url</url>
-    <where>http://www.deviantart.com/</where>
-  </location>
-  <commercial>true</commercial>
-  <fee>
-    <description></description>
-    <price>10%</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "location": {
+    "region": {
       "type": "url",
       "url": "http://www.deviantart.com/"
     },
@@ -300,8 +228,105 @@ DRは主に商用での利用を想定していますが、権利者は非営利
     }
   }
 }
+</drequired>
 ```
 
-## License
+### 許諾を受けた者の表示
+
+許諾を受けた人は、以下の表示をすることによって、許諾を受けた旨を表することができます。
+
+- 原作のURL(origins)
+  - 複数の作品の二次創作の場合、全てを併記します（作品が一つでもカラム名は"origins"と複数形です）
+    - 創作元が複数存在する場合、あなたは__その全てに対し__所定の費用を支払う必要があります。 
+- 二次創作作品が公開されているURL(website)
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+      "http://zunko.jp/con_illust.html"
+    }
+    "website": "https://twitter.com/t_zunko",
+  }
+}
+</drequired>
+```
+
+### 三次創作の許諾
+
+DRによって二次創作した作品に対し、さらにDRライセンスを付与することができます。
+
+例:
+
+- 原作のURL: http://zunko.jp/
+- 二次創作作品が公開されているURL: https://twitter.com/t_zunko
+- 期間: 2017-08-11 10:00:00から2017-08-11 16:00:00まで
+- 場所: http://www.deviantart.com/ を含むURL
+- 商用: 可 
+- 費用: 総売上の10%
+  - 支払い方の説明: http://zunko.jp/con_shoushi.html
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+    }
+    "website": "https://twitter.com/t_zunko",
+  },
+
+  "license": {
+    "version": 1.0.0,
+    "website": "https://twitter.com/t_zunko",
+    "term": {
+      "from": "2017-08-11 10:00:00",
+      "to": "2017-08-11 16:00:00"
+    },
+    "region": {
+      "type": "url",
+      "url": "http://www.deviantart.com/"
+    },
+    "commercial": true,
+    "fee": {
+      "description": "http://zunko.jp/con_shoushi.html",
+      "price": "10%"
+    }
+  }
+}
+</drequired>
+```
+
+三次創作した人は、以下のルールに従ってoriginsの値を設定してください。
+- 一次創作物と二次創作物双方の二次創作の場合、work.website 及び work.origins の値を origins に入れる
+- 二次創作物のみの二次創作であって、一次創作物からの派生要素が一切ない場合、 work.website の値のみを origins に入れる
+
+例として、 http://jiyu.lol/ で三次創作されたと仮定します。一次創作物と二次創作物双方の二次創作とします。
+
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+      "https://twitter.com/t_zunko",
+    }
+    "website": "http://jiyu.lol/",
+  }
+}
+```
+
+
+## ライセンス
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />この文書は <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ 表示 4.0 国際 ライセンス</a>の下に提供されており、当プロジェクトに付帯したソースコードは[MITライセンス](https://en.wikipedia.org/wiki/MIT_License)の下で提供されます。
+
+著者: [jiyu](http://jiyu.lol/)
+
+
+## バージョン情報
+
+1.0.0 (2017-05-05)

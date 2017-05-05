@@ -15,6 +15,8 @@ DR is:
 
 DR is NOT:
 - Profit Organization
+- forcing unlimited terms
+- forcing unlimited region
 
 
 ## Intro
@@ -45,11 +47,26 @@ In conclusion, just to publish creative works for free is not good way to surviv
 * Mashine-readable license. The license is written as XML and JSON. It helpes developer to implement automatic loyalty payment system.
 * Designated location and term. Licenser can designated where and when licensee can make derivative works.
 
-## 
-
-
 
 ## Types of licenses and their specifications
+
+License text is written as JSON format. The JSON is enclosed by <drequired> tag. You can set any attribute to <drequired>. It's recommended to add ```style="display:none;"``` in order not to display it on browser view.
+
+```html
+<drequired style="display:none;">
+{
+  "license": {
+    "version": 1.0,
+    /* license description below
+        :
+        :
+    */
+  }
+}
+</drequired>
+```
+
+Accessing that page by http and read text inside <drequired>, you can get license information by JSON format.
 
 ### Term
 
@@ -59,36 +76,24 @@ Licensers can designated the term of validity. The term is written as the dateti
 
 Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <term>
-    <from>1999-12-31 23:59:59</from>
-    <to>2000-01-30 23:59:59</to>
-  </term>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "term": {
       "from": "1999-12-31 23:59:59", 
       "to": "2000-01-30 23:59:59"
     }
   }
 }
+</drequired>
 ```
 
-### Location
+### Region
 
-Licensers can designated the location of validity. The location is written as URL. If the location is not designated, __it's regarded as any URL__. 
+Licensers can designated the location of validity(region). The region is written as URL. If the region is not designated, __it's regarded as any URL__. 
 
 - If type parameter's value is "map", it means location of validity is the spot which the map URL designated. 
   - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" means "designate the Tokyo Big Sight(the spot name in real world)".
@@ -99,60 +104,36 @@ Licensers can designated the location of validity. The location is written as UR
 
 Grant license at the any URL including "http://jiyu.lol/blog/".
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <location>
-    <type>url</type>
-    <where>http://jiyu.lol/blog</where>
-  </location>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": {
       "type": "url",
       "where": "http://jiyu.lol/blog"
     }
   }
 }
+</drequired>
 ```
 
 Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416).
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <location>
-    <type>map</type>
-    <where>https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416</where>
-  </location>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": {
       "type": "url",
       "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
     }
   }
 }
+</drequired>
 ```
 
 ### Non-commercial
@@ -163,56 +144,33 @@ DR is mainly for commercial use, but sometime the licenser wants to grant non-co
 
 Grant license as long as it's non-commercial use.
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <commercial>false</commercial>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
-    "location": "http://jiyu.lol/blog",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "region": "http://jiyu.lol/blog",
     "commercial": false
   }
 }
+</drequired>
 ```
 
 ### Fee
 
-Licensers set fee of using works. They can set percentage of gross revenue or fixed price. Licensers should clarify the URL which people can understand how to pay. If licensers don't set this parameter, __it's regarded as free__.
+Licensers set fee of using works. They can set percentage of gross revenue or fixed price. Licensers should clarify the URL which people can understand how to pay. Licensees are charged when they sell their derivative/doujin works __for profit__. If they provide it __for free__, licensees __don't have to pay any fee to original author__. If licensers don't set this parameter, __it's regarded as free__.
 
 #### Example
 
 Grant license for 1000JPY(Japanese Yen).
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <fee>
-    <description>http://zunko.jp/con_shoushi.html</description>
-    <currency>JPY</currency>
-    <price>1000</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "currency": "JPY",
@@ -220,81 +178,49 @@ Grant license for 1000JPY(Japanese Yen).
     }
   }
 }
+</drequired>
 ```
 
 Grant license for 10% of gross revenue.
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <fee>
-    <description>http://zunko.jp/con_shoushi.html</description>
-    <price>10%</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
+    "version": 1.0.0,
     "type": "dr",
-    "origin": "http://zunko.jp/",
+    "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "price": "10%"
     }
   }
 }
+</drequired>
 ```
 
 Now, you've learnt all parameters of DR. Let's make your own license. [Under Maintenance](http://example.com/)
 
 For example:
 
-- URL of Original Work: http://zunko.jp/
+- URL of websiteal Work: http://zunko.jp/
 - Term: from 2017-08-11 10:00:00 to 2017-08-11 16:00:00
-- Location: URL including http://www.deviantart.com/
+- Region: URL including http://www.deviantart.com/
 - Commercial: OK 
 - Fee: 10% of gross revenue
   - Description of how to pay: http://zunko.jp/con_shoushi.html
 
-##### XML
-
-```
-<license type="dr">
-  <origin>http://zunko.jp/</origin>
-  <term>
-    <from>2017-08-11 10:00:00</from>
-    <to>2017-08-11 16:00:00</to>
-  </term>
-  <location>
-    <type>url</url>
-    <where>http://www.deviantart.com/</where>
-  </location>
-  <commercial>true</commercial>
-  <fee>
-    <description></description>
-    <price>10%</price>
-  </fee>
-</license>
-```
-
-##### JSON
-
-```
+```html
+<drequired style="display:none;">
 {
   "license": {
-    "type": "dr",
-    "origin": "http://zunko.jp/",
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "location": {
+    "region": {
       "type": "url",
       "url": "http://www.deviantart.com/"
     },
@@ -305,10 +231,105 @@ For example:
     }
   }
 }
+</drequired>
 ```
+
+### Display license
+
+Licensees can assert their right by displaying JSON below.
+
+- URL of original works
+  - If it's derivative/doujin work of multiple works licensed by DR, you should write all of them down(if not, you should use plural form "origins")
+    - You should pay __all original authors__.
+- URL of your derivative/doujin work
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+      "http://zunko.jp/con_illust.html"
+    }
+    "website": "https://twitter.com/t_zunko",
+  }
+}
+</drequired>
+```
+
+### Apply DR to the derivative/doujin work
+
+You can apply DR license to your work derived by other works licensed by DR.
+
+Example:
+
+- URL of original work: http://zunko.jp/
+- URL of your derivative/doujin work
+- Term: From 2017-08-11 10:00:00 to 2017-08-11 16:00:00
+- Region: URL including http://www.deviantart.com/ 
+- Commercial: OK 
+- Fee: 10% of gross revenue
+  - Description of how to pay: http://zunko.jp/con_shoushi.html
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+    }
+    "website": "https://twitter.com/t_zunko",
+  },
+
+  "license": {
+    "version": 1.0.0,
+    "website": "https://twitter.com/t_zunko",
+    "term": {
+      "from": "2017-08-11 10:00:00",
+      "to": "2017-08-11 16:00:00"
+    },
+    "region": {
+      "type": "url",
+      "url": "http://www.deviantart.com/"
+    },
+    "commercial": true,
+    "fee": {
+      "description": "http://zunko.jp/con_shoushi.html",
+      "price": "10%"
+    }
+  }
+}
+</drequired>
+```
+
+People who make derivative/doujin work(third work) of your work(second work) should set origins value following this rule:
+- If it's derivative/doujin works of both original work(first work) and derivative/doujin work(second work), set work.website and work.origins to origins
+- If it's derivative/doujin works of only derivative/doujin work(second work), not including any material of original work(first work), set work.website to origins
+
+For example, third work published http://jiyu.lol/. It's derivative/doujin work of both original work(first work) and derivative/doujin work(second work).
+
+```html
+<drequired style="display:none;">
+{
+  "work": {
+    "origins": {
+      "http://zunko.jp/",
+      "https://twitter.com/t_zunko",
+    }
+    "website": "http://jiyu.lol/",
+  }
+}
+```
+
+
 
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This text is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, and the source codes bundled in this project are licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
 Author: [jiyu](http://jiyu.lol/)
+
+
+## Version
+
+1.0.0 (2017-05-05)
