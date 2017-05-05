@@ -150,7 +150,6 @@ Grant license as long as it's non-commercial use.
   "license": {
     "version": 1.0.0,
     "website": "http://zunko.jp/",
-    "region": "http://jiyu.lol/blog",
     "commercial": false
   }
 }
@@ -239,7 +238,7 @@ For example:
 Licensees can assert their right by displaying JSON below.
 
 - URL of original works
-  - If it's derivative/doujin work of multiple works licensed by DR, you should write all of them down(if not, you should use plural form "origins")
+  - If it's derivative/doujin work of multiple works licensed by DR, you should write all of them down
     - You should pay __all original authors__ .
 - URL of your derivative/doujin work
 
@@ -247,7 +246,7 @@ Licensees can assert their right by displaying JSON below.
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
       "http://zunko.jp/con_illust.html"
     }
@@ -275,7 +274,7 @@ Example:
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
     }
     "website": "https://twitter.com/t_zunko",
@@ -302,9 +301,9 @@ Example:
 </drequired>
 ```
 
-People who make derivative/doujin work(third work) of your work(second work) should set origins value following this rule:
-- If it's derivative/doujin works of both original work(first work) and derivative/doujin work(second work), set work.website and work.origins to origins
-- If it's derivative/doujin works of only derivative/doujin work(second work), not including any material of original work(first work), set work.website to origins
+People who make derivative/doujin work(third work) of your work(second work) should set origin value following this rule:
+- If it's derivative/doujin works of both original work(first work) and derivative/doujin work(second work), set work.website and work.origin to origin
+- If it's derivative/doujin works of only derivative/doujin work(second work), not including any material of original work(first work), set work.website to origin
 
 For example, third work published http://jiyu.lol/. It's derivative/doujin work of both original work(first work) and derivative/doujin work(second work).
 
@@ -312,7 +311,7 @@ For example, third work published http://jiyu.lol/. It's derivative/doujin work 
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
       "https://twitter.com/t_zunko",
     }

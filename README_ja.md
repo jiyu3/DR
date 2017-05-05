@@ -147,8 +147,27 @@ DRは主に商用での利用を想定していますが、権利者は非営利
   "license": {
     "version": 1.0.0,
     "website": "http://zunko.jp/",
-    "region": "http://jiyu.lol/blog",
     "commercial": false
+  }
+}
+</drequired>
+```
+
+### 成人向け(Sexual)
+
+権利者は[成人向けコンテンツ](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%80%E3%83%AB%E3%83%88%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)の二次創作を許可するかどうかを設定できます。このパラメータを省略した場合、 __成人向けを許可しているとみなされます__ 。
+
+#### 例
+
+成人向けの二次創作を許可しない。
+
+```html
+<drequired style="display:none;">
+{
+  "license": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "sexual": false
   }
 }
 </drequired>
@@ -204,6 +223,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 - 期間: 2017-08-11 10:00:00から2017-08-11 16:00:00まで
 - 場所: http://www.deviantart.com/ を含むURL
 - 商用: 可 
+- 成人向け: 不許可
 - 費用: 総売上の10%
   - 支払い方の説明: http://zunko.jp/con_shoushi.html
 
@@ -222,6 +242,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
       "url": "http://www.deviantart.com/"
     },
     "commercial": true,
+    "sexual": false,
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "price": "10%"
@@ -235,8 +256,8 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 
 許諾を受けた人は、以下の表示をすることによって、許諾を受けた旨を表することができます。
 
-- 原作のURL(origins)
-  - 複数の作品の二次創作の場合、全てを併記します（作品が一つでもカラム名は"origins"と複数形です）
+- 原作のURL(origin)
+  - 複数の作品の二次創作の場合、全てを併記します。
     - 創作元が複数存在する場合、あなたは __その全てに対し__ 所定の費用を支払う必要があります。 
 - 二次創作作品が公開されているURL(website)
 
@@ -244,7 +265,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
       "http://zunko.jp/con_illust.html"
     }
@@ -272,7 +293,7 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
     }
     "website": "https://twitter.com/t_zunko",
@@ -299,9 +320,9 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 </drequired>
 ```
 
-三次創作した人は、以下のルールに従ってoriginsの値を設定してください。
-- 一次創作物と二次創作物双方の二次創作の場合、work.website 及び work.origins の値を origins に入れる
-- 二次創作物のみの二次創作であって、一次創作物からの派生要素が一切ない場合、 work.website の値のみを origins に入れる
+三次創作した人は、以下のルールに従ってoriginの値を設定してください。
+- 一次創作物と二次創作物双方の二次創作の場合、work.website 及び work.origin の値を origin に入れる
+- 二次創作物のみの二次創作であって、一次創作物からの派生要素が一切ない場合、 work.website の値のみを origin に入れる
 
 例として、 http://jiyu.lol/ で三次創作されたと仮定します。一次創作物と二次創作物双方の二次創作とします。
 
@@ -310,7 +331,7 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 <drequired style="display:none;">
 {
   "work": {
-    "origins": {
+    "origin": {
       "http://zunko.jp/",
       "https://twitter.com/t_zunko",
     }
