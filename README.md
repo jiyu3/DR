@@ -4,9 +4,9 @@
 
 ## What can you do with DR?
 
-DR license is the license that licensers enable to grant license for others to make doujin/derivative works without expertise of law. The biggest difference from [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) are:
-- __DO NOT ALLOW copy__ licenser's works. licensees should create new works.
-- __limited time and region__ . Licensers can dedicate where and when licensees can make derivative/doujin works.
+DR license is the license that licensors enable to grant license for others to make doujin/derivative works without expertise of law. The biggest difference from [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) are:
+- __DO NOT ALLOW copy__ licensor's works. licensees should create new works.
+- __limited time and region__ . Licensors can dedicate where and when licensees can make derivative/doujin works.
 
 DR is:
 - [Copyleft](https://en.wikipedia.org/wiki/Copyleft)
@@ -21,7 +21,7 @@ DR is NOT:
 
 ## Intro
 
-A lot of creative works don't have a license. It's inefficient because licensee should request permission every time they want to use it. It may be difficult to find licensers, if they're found, they don't want to negotiate because artists don't prefer such a non-creative stuff, and they're too poor to hire good agent.
+A lot of creative works don't have a license. It's inefficient because licensee should request permission every time they want to use it. It may be difficult to find licensors, if they're found, they don't want to negotiate because artists don't prefer such a non-creative stuff, and they're too poor to hire good agent.
 
 We already have [Creative Commons](https://creativecommons.org/) and [Doujin Mark(Japanese)](https://commonsphere.jp/doujin-license-1/), but it's not well-custormised for business.
 
@@ -31,7 +31,7 @@ But it's hard to imitate this way in creative industry. They sell works itself, 
 
 Of course there are not a few exceptions. Actually Japanese anime is almost free(Officially it's illegal, it's easy to find anime broadcasting website with great Google search engine). Nevertheless, they earn moderate money. If the anime get famous because of free-illegal-broadcasting, derivative products(anime goods, manga, and so on) are also sold well. And they can grant character's license to other companies with charge. What we call license business; anime works as advertising.
 
-But their are the problem. First, licenser have to have facility and organization to make producsts and  managing license. Most artists and small companies can't afford to own/buy them. Secondary, Japanese anime industry is actually shrinking; totally losing is more than gaining; not sustainable. These are why other industries don't imitate this model.
+But their are the problem. First, licensor have to have facility and organization to make producsts and  managing license. Most artists and small companies can't afford to own/buy them. Secondary, Japanese anime industry is actually shrinking; totally losing is more than gaining; not sustainable. These are why other industries don't imitate this model.
 
 Of course, some organizations try to make solution. I surveyed most of them, only to understand they're out of style; they're [proprietary](https://en.wikipedia.org/wiki/Proprietary_software). Who is willing to submit to specified organization?
 
@@ -45,7 +45,7 @@ In conclusion, just to publish creative works for free is not good way to surviv
 
 * Human-readable license. I'm going to make deeds like [Creative Commons do](https://creativecommons.org/licenses/by/3.0/).
 * Mashine-readable license. The license is written as XML and JSON. It helpes developer to implement automatic loyalty payment system.
-* Designated location and term. Licenser can designated where and when licensee can make derivative works.
+* Designated location and term. Licensor can designated where and when licensee can make derivative works.
 
 
 ## Types of licenses and their specifications
@@ -70,7 +70,7 @@ Accessing that page by http and read text inside <drequired>, you can get licens
 
 ### Term
 
-Licensers can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__ .
+Licensors can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__ .
 
 #### Example
 
@@ -93,7 +93,7 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
 
 ### Region
 
-Licensers can designated the location of validity(region). The region is written as URL. If the region is not designated, __it's regarded as any URL__ . 
+Licensors can designated the location of validity(region). The region is written as URL. If the region is not designated, __it's regarded as any URL__ . 
 
 - If type parameter's value is "map", it means location of validity is the spot which the map URL designated. 
   - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" means "designate the Tokyo Big Sight(the spot name in real world)".
@@ -144,7 +144,7 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
 
 ### Non-commercial
 
-DR is mainly for commercial use, but sometime the licenser wants to grant non-commercial use. If licensers don't set this parameter, __it's regarded as allowing commercial use__ .
+DR is mainly for commercial use, but sometime the licensor wants to grant non-commercial use. If licensors don't set this parameter, __it's regarded as allowing commercial use__ .
 
 #### Example
 
@@ -164,7 +164,7 @@ Grant license as long as it's non-commercial use.
 
 ### Fee
 
-Licensers set fee of using works. They can set percentage of gross revenue or fixed price. Licensers should clarify the URL which people can understand how to pay. Licensees are charged when they sell their derivative/doujin works __for profit__ . If they provide it __for free__ , licensees __don't have to pay any fee to original author__ . If licensers don't set this parameter, __it's regarded as free__ .
+Licensors set fee of using works. They can set percentage of gross revenue or fixed price. Licensors should clarify the URL which people can understand how to pay. Licensees are charged when they sell their derivative/doujin works __for profit__ . If they provide it __for free__ , licensees __don't have to pay any fee to original author__ . If licensors don't set this parameter, __it's regarded as free__ .
 
 #### Example
 
