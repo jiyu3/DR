@@ -1,6 +1,4 @@
-```
 DR organization is not a law firm and does not provide legal services or legal advice. Distribution of DR public licenses does not create a lawyer-client or other relationship. DR makes its licenses and related information available on an “as-is” basis. DR gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. DR disclaims all liability for damages resulting from their use to the fullest extent possible.
-```
 
 ## Using DR Public Licenses
 
