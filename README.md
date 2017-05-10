@@ -6,7 +6,7 @@
 
 DR license is the license that licensors enable to grant license for others to make doujin/derivative works without expertise of law. The biggest difference from [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) are:
 - __DO NOT ALLOW copy__ licensor's works. licensees should create new works.
-- __limited time and region__ . Licensors can dedicate where and when licensees can make derivative/doujin works.
+- __limited time and region__. Licensors can dedicate where and when licensees can make derivative/doujin works.
 
 DR is:
 - [Copyleft](https://en.wikipedia.org/wiki/Copyleft)
@@ -70,7 +70,7 @@ Accessing that page by http and read text inside <drequired>, you can get licens
 
 ### Term
 
-Licensors can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__ .
+Licensors can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__.
 
 #### Example
 
@@ -93,7 +93,7 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
 
 ### Region
 
-Licensors can designated the location of validity(region). The region is written as URL. If the region is not designated, __it's regarded as any URL__ . 
+Licensors can designated the location of validity(region). The region is written as URL. If the region is not designated, __it's regarded as any URL__. 
 
 - If type parameter's value is "map", it means location of validity is the spot which the map URL designated. 
   - "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416" means "designate the Tokyo Big Sight(the spot name in real world)".
@@ -144,7 +144,7 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
 
 ### Non-commercial
 
-DR is mainly for commercial use, but sometime the licensor wants to grant non-commercial use. If licensors don't set this parameter, __it's regarded as allowing commercial use__ .
+DR is mainly for commercial use, but sometime the licensor wants to grant non-commercial use. If licensors don't set this parameter, __it's regarded as allowing commercial use__.
 
 #### Example
 
@@ -162,9 +162,31 @@ Grant license as long as it's non-commercial use.
 </drequired>
 ```
 
+
+### 成人向け(Adults Only)
+
+Licensors can choose if licensees can create [Adults Only(AO) Contents](https://en.wikipedia.org/wiki/List_of_AO-rated_video_games) or not. If licensors don't set this parameter, __it's regarded as allowing Adults Only Contents__.
+
+#### 例
+
+Grant license as long as it's non-AO contents.
+
+```html
+<drequired style="display:none;">
+{
+  "license": {
+    "version": 1.0.0,
+    "website": "http://zunko.jp/",
+    "adult": false
+  }
+}
+</drequired>
+```
+
+
 ### Fee
 
-Licensors set fee of using works. They can set percentage of gross revenue or fixed price. Licensors should clarify the URL which people can understand how to pay. Licensees are charged when they sell their derivative/doujin works __for profit__ . If they provide it __for free__ , licensees __don't have to pay any fee to original author__ . If licensors don't set this parameter, __it's regarded as free__ .
+Licensors set fee of using works. They can set percentage of gross revenue or fixed price. Licensors should clarify the URL which people can understand how to pay. Licensees are charged when they sell their derivative/doujin works __for profit__. If they provide it __for free__ , licensees __don't have to pay any fee to original author__. If licensors don't set this parameter, __it's regarded as free__.
 
 #### Example
 
@@ -245,7 +267,7 @@ Licensees can assert their right by displaying JSON below.
 
 - URL of original works
   - If it's derivative/doujin work of multiple works licensed by DR, you should write all of them down
-    - You should pay __all original authors__ .
+    - You should pay __all original authors__.
 - URL of your derivative/doujin work
 
 ```html
