@@ -53,8 +53,8 @@ DRは以下ではありません。
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0,
-    /* 以下、ライセンスの情報を書く
+    "version": "1.0.0",
+    /* license description below
         :
         :
     */
@@ -77,7 +77,7 @@ http通信で当該ページを読み込み、<drequired>タグの中身にア�
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
       "from": "1999-12-31 23:59:59", 
@@ -107,7 +107,7 @@ http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "region": {
       "type": "url",
@@ -124,9 +124,9 @@ http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
-    "region": {
+    "region": [
       {
         "type": "map",
         "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
@@ -135,7 +135,7 @@ http://jiyu.lol/blog/ を含むURLでの利用を許諾する。
         "type": "url",
         "where": "http://jiyu.lol/blog/"
       }
-    }
+    ]
   }
 }
 </drequired>
@@ -153,7 +153,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "commercial": false
   }
@@ -173,7 +173,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "adult": false
   }
@@ -193,7 +193,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
@@ -211,7 +211,7 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "type": "dr",
     "website": "http://zunko.jp/",
     "fee": {
@@ -239,18 +239,19 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "region": {
-      "type": "url",
-      "url": "http://www.deviantart.com/"
-    },
+    "region": [
+      {
+        "type": "url",
+        "url": "http://www.deviantart.com/"
+      }
+    ],
     "commercial": true,
-    "adult": false,
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
       "price": "10%"
@@ -273,11 +274,11 @@ DRは主に商用での利用を想定していますが、権利者は非営利
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
+    "origin": [
       "http://zunko.jp/",
       "http://zunko.jp/con_illust.html"
-    }
-    "website": "https://twitter.com/t_zunko",
+    ],
+    "website": "https://twitter.com/t_zunko"
   }
 }
 </drequired>
@@ -301,23 +302,25 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
-      "http://zunko.jp/",
-    }
-    "website": "https://twitter.com/t_zunko",
+    "origin": [
+      "http://zunko.jp/"
+    ],
+    "website": "https://twitter.com/t_zunko"
   },
 
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "https://twitter.com/t_zunko",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "region": {
-      "type": "url",
-      "url": "http://www.deviantart.com/"
-    },
+    "region": [
+      {
+        "type": "url",
+        "url": "http://www.deviantart.com/"
+      }
+    ],
     "commercial": true,
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
@@ -339,11 +342,11 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
+    "origin": [
       "http://zunko.jp/",
-      "https://twitter.com/t_zunko",
-    }
-    "website": "http://jiyu.lol/",
+      "https://twitter.com/t_zunko"
+    ],
+    "website": "http://jiyu.lol/"
   }
 }
 ```
@@ -358,4 +361,4 @@ DRによって二次創作した作品に対し、さらにDRライセンスを�
 
 ## バージョン情報
 
-1.0.0 (2017-05-05)
+"1.0.0" (2017-05-05)

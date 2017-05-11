@@ -56,7 +56,7 @@ License text is written as JSON format. The JSON is enclosed by <drequired> tag.
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0,
+    "version": "1.0.0",
     /* license description below
         :
         :
@@ -80,7 +80,7 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
       "from": "1999-12-31 23:59:59", 
@@ -108,7 +108,7 @@ Grant license at the any URL including "http://jiyu.lol/blog/".
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "region": {
       "type": "url",
@@ -125,9 +125,9 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
-    "region": {
+    "region": [
       {
         "type": "map",
         "where": "https://www.google.co.jp/maps/place/Tokyo+Big+Sight/@35.6298243,139.7920476,17z/data=!3m2!4b1!5s0x601889dc3beb6fed:0xb6c29ca3bd43e108!4m5!3m4!1s0x601889dc629d1e7b:0xa4d1509a76045a01!8m2!3d35.62982!4d139.7942416"
@@ -136,7 +136,7 @@ Grant license in [Tokyo Big Sight](https://www.google.co.jp/maps/place/Tokyo+Big
         "type": "url",
         "where": "http://jiyu.lol/blog/"
       }
-    }
+    ]
   }
 }
 </drequired>
@@ -154,7 +154,7 @@ Grant license as long as it's non-commercial use.
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "commercial": false
   }
@@ -175,7 +175,7 @@ Grant license as long as it's non-AO contents.
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "adult": false
   }
@@ -196,7 +196,7 @@ Grant license for 1000JPY(Japanese Yen).
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
@@ -214,7 +214,7 @@ Grant license for 10% of gross revenue.
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "type": "dr",
     "website": "http://zunko.jp/",
     "fee": {
@@ -241,16 +241,18 @@ For example:
 <drequired style="display:none;">
 {
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "region": {
-      "type": "url",
-      "url": "http://www.deviantart.com/"
-    },
+    "region": [
+      {
+        "type": "url",
+        "url": "http://www.deviantart.com/"
+      }
+    ],
     "commercial": true,
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
@@ -274,11 +276,11 @@ Licensees can assert their right by displaying JSON below.
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
+    "origin": [
       "http://zunko.jp/",
       "http://zunko.jp/con_illust.html"
-    }
-    "website": "https://twitter.com/t_zunko",
+    ],
+    "website": "https://twitter.com/t_zunko"
   }
 }
 </drequired>
@@ -302,23 +304,25 @@ Example:
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
-      "http://zunko.jp/",
-    }
-    "website": "https://twitter.com/t_zunko",
+    "origin": [
+      "http://zunko.jp/"
+    ],
+    "website": "https://twitter.com/t_zunko"
   },
 
   "license": {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "website": "https://twitter.com/t_zunko",
     "term": {
       "from": "2017-08-11 10:00:00",
       "to": "2017-08-11 16:00:00"
     },
-    "region": {
-      "type": "url",
-      "url": "http://www.deviantart.com/"
-    },
+    "region": [
+      {
+        "type": "url",
+        "url": "http://www.deviantart.com/"
+      }
+    ],
     "commercial": true,
     "fee": {
       "description": "http://zunko.jp/con_shoushi.html",
@@ -339,11 +343,11 @@ For example, third work published http://jiyu.lol/. It's derivative/doujin work 
 <drequired style="display:none;">
 {
   "work": {
-    "origin": {
+    "origin": [
       "http://zunko.jp/",
-      "https://twitter.com/t_zunko",
-    }
-    "website": "http://jiyu.lol/",
+      "https://twitter.com/t_zunko"
+    ],
+    "website": "http://jiyu.lol/"
   }
 }
 ```
@@ -358,4 +362,4 @@ Author: [jiyu](http://jiyu.lol/)
 
 ## Version
 
-1.0.0 (2017-05-05)
+"1.0.0" (2017-05-05)
