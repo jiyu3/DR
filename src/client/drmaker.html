@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		if(location.protocol == 'https:') {
+			location.replace(location.href.replace(/https:/, 'http:'));
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="/img/favicon.ico" >
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>DR maker</title>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- Bootstrap start -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script async src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Bootstrap end -->
+</head>
+<body>
+<form>
+    <input id="version" value="1.0.0" type="hidden">
+
+    <div class="form-group">
+        <label for="website">Original Contents Website:</label>
+        <input type="text" class="form-control" id="website">
+    </div>
+    <div class="form-group">
+        <label for="term">Term:</label>
+        <input type="password" class="form-control" id="term">
+    </div>
+
+    "term": {
+      "from": "2017-08-11 10:00:00",
+      "to": "2017-08-11 16:00:00"
+    },
+    "region": [
+      {
+        "type": "url",
+        "url": "http://www.deviantart.com/"
+      }
+    ],
+    "commercial": true,
+    "fee": {
+      "description": "http://zunko.jp/con_shoushi.html",
+      "price": "10%"
+    }
+
+
+</form>
+</body>

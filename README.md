@@ -70,11 +70,11 @@ Accessing that page by http and read text inside <drequired>, you can get licens
 
 ### Term
 
-Licensors can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm-ss". If the term is not designated, __it's regarded as indefinite term__.
+Licensors can designated the term of validity. The term is written as the datetime format "yyyy-mm-dd hh-mm". If the term is not designated, __it's regarded as indefinite term__.
 
 #### Example
 
-Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
+Grant license from 1999-12-31 23:59 to 2000-01-30 23:59.
 
 ```html
 <drequired style="display:none;">
@@ -83,8 +83,8 @@ Grant license from 1999-12-31 23:59:59 to 2000-01-30 23:59:59.
     "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
-      "from": "1999-12-31 23:59:59", 
-      "to": "2000-01-30 23:59:59"
+      "from": "1999-12-31T23:59", 
+      "to": "2000-01-30T23:59"
     }
   }
 }
@@ -231,7 +231,7 @@ Now, you've learnt all parameters of DR. Let's make your own license. [Under Mai
 For example:
 
 - URL of websiteal Work: http://zunko.jp/
-- Term: from 2017-08-11 10:00:00 to 2017-08-11 16:00:00
+- Term: from 2017-08-11 10:00 to 2017-08-11 16:00
 - Region: URL including http://www.deviantart.com/
 - Commercial: OK 
 - Fee: 10% of gross revenue
@@ -244,8 +244,8 @@ For example:
     "version": "1.0.0",
     "website": "http://zunko.jp/",
     "term": {
-      "from": "2017-08-11 10:00:00",
-      "to": "2017-08-11 16:00:00"
+      "from": "2017-08-11T10:00",
+      "to": "2017-08-11T16:00"
     },
     "region": [
       {
@@ -294,7 +294,7 @@ Example:
 
 - URL of original work: http://zunko.jp/
 - URL of your derivative/doujin work
-- Term: From 2017-08-11 10:00:00 to 2017-08-11 16:00:00
+- Term: From 2017-08-11 10:00 to 2017-08-11 16:00
 - Region: URL including http://www.deviantart.com/ 
 - Commercial: OK 
 - Fee: 10% of gross revenue
@@ -314,8 +314,8 @@ Example:
     "version": "1.0.0",
     "website": "https://twitter.com/t_zunko",
     "term": {
-      "from": "2017-08-11 10:00:00",
-      "to": "2017-08-11 16:00:00"
+      "from": "2017-08-11T10:00",
+      "to": "2017-08-11T16:00"
     },
     "region": [
       {
